@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">581153003714-55un9n870bghonaln4dubr5a9g92vv4g.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">581153003714</string>
+    <string name="google_api_key" translatable="false">AIzaSyBERnOBQ8t9r01SOOAk0YNsHrEEZM_aDHs</string>
+    <string name="google_app_id" translatable="false">1:581153003714:android:25facfa6d80f92c3cd835b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBERnOBQ8t9r01SOOAk0YNsHrEEZM_aDHs</string>
+    <string name="google_storage_bucket" translatable="false">nagapradeshdevjam.appspot.com</string>
+    <string name="project_id" translatable="false">nagapradeshdevjam</string>
+</resources>

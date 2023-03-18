@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "581153003714",
+    "project_id": "nagapradeshdevjam",
+    "storage_bucket": "nagapradeshdevjam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581153003714:android:25facfa6d80f92c3cd835b",
+        "android_client_info": {
+          "package_name": "com.example.pgapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581153003714-55un9n870bghonaln4dubr5a9g92vv4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBERnOBQ8t9r01SOOAk0YNsHrEEZM_aDHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581153003714-55un9n870bghonaln4dubr5a9g92vv4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
