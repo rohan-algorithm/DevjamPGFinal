@@ -3,6 +3,7 @@ import 'clg.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:pgapp/clg.dart';
 final _firestore = FirebaseFirestore.instance;
 
 class AvlClg extends StatefulWidget {
@@ -49,177 +50,177 @@ class _AvlClgState extends State<AvlClg> {
 }
 
 
-class AvlClg extends StatelessWidget {
-  static const String id = "avlclg";
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: const [
-              UserAccountsDrawerHeader(
-                  currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage('assets/profile.jpeg'),
-                  ),
-                  decoration: BoxDecoration(
-                      color: Colors.deepPurple
-                  ),
-                  accountName:  Text('Rohan Rao'),
-                  accountEmail:  Text('xyz@gmail.com')
-              ),
-              ListTile(
-                title: Text("Home"),
-                leading: Icon(Icons.home),
-              ),
-              ListTile(
-                title: Text("Next Screen"),
-                leading: Icon(Icons.accessibility_new),
-
-              ),
-              ListTile(
-                title: Text("Log Out"),
-                leading: Icon(Icons.logout),
-
-              ),
-            ],
-          ),
-        ),
-        appBar: AppBar(
-          toolbarHeight: 100.0,
-          // leading: Drawer(
-
-          // ),
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(16),
-                bottomLeft: Radius.circular(16)),
-          ),
-          title: Center(
-              child: Text('AVAILABLE PG\'s AT')),
-          shadowColor: Colors.deepPurple.shade700,
-          backgroundColor: Colors.deepPurple.shade700,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.bookmark_added_rounded),
-              tooltip: 'Your bookmarked PG\'s',
-              onPressed: () {
-                // handle the press
-              },
-            ),
-          ],
-
-        ),
-        backgroundColor: Colors.grey.shade300,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0.0,vertical: 10.0),
-            child: PgPage(),
-
-          ),
-
-        ),
-      );
-
-  }
-}
-
-class PgPage extends StatefulWidget {
-  @override
-  _PgPageState createState() => _PgPageState();
-}
-
-class _PgPageState extends State<PgPage> {
-
-  Container viewList( String collegeName, int id){
-    return Container(
-      height: 100.0,
-      child: Card(
-        margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 25.0),
-        elevation: 5.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all( Radius.circular(12.0)),
-        ),
-        child: TextButton(
-
-          child: ListTile(
-
-            leading: CircleAvatar(
-              backgroundColor: Colors.deepPurple.shade700,
-              child: Icon(
-                Icons.night_shelter,
-                color: Colors.white,
-              ),
-            ),
-            title: Text(
-              collegeName,
-            ),
-          ),
-          onPressed: (){
-            // Navigator.pushNamed(
-            //     context,
-            _navigateToNextScreen(context);
-            // ),
-
-            //
-          },
-
-        ),
-      ),
-    );
-  }
-  @override
-  Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          elevation: 10.0,
-
-          toolbarHeight: 100.0,
-
-          shape: const RoundedRectangleBorder(
-
-            borderRadius: BorderRadius.all( Radius.circular(16.0)),
-          ),
-          backgroundColor: Colors.deepPurple.shade700,
-          title: Container(
-            width: double.infinity,
-            height: 40,
-
-            color: Colors.white,
-            child: const Center(
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Search college',
-
-                    prefixIcon: Icon(Icons.search),
-                    suffixIcon: Icon(Icons.camera_alt)),
-              ),
-            ),
-          ),
-        ),
-        SliverList(
-          delegate: SliverChildListDelegate(
-            [
-              Column(
-                children: <Widget>[
-                  ClgStream(),
-
-                ],
-              ),
-
-            ],
-          ),
-        ),
-      ],
-
-    );
-
-  }
-}
+// class AvlClg extends StatelessWidget {
+//   static const String id = "avlclg";
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         drawer: Drawer(
+//           child: ListView(
+//             padding: EdgeInsets.zero,
+//             children: const [
+//               UserAccountsDrawerHeader(
+//                   currentAccountPicture: CircleAvatar(
+//                     backgroundImage: AssetImage('assets/profile.jpeg'),
+//                   ),
+//                   decoration: BoxDecoration(
+//                       color: Colors.deepPurple
+//                   ),
+//                   accountName:  Text('Rohan Rao'),
+//                   accountEmail:  Text('xyz@gmail.com')
+//               ),
+//               ListTile(
+//                 title: Text("Home"),
+//                 leading: Icon(Icons.home),
+//               ),
+//               ListTile(
+//                 title: Text("Next Screen"),
+//                 leading: Icon(Icons.accessibility_new),
+//
+//               ),
+//               ListTile(
+//                 title: Text("Log Out"),
+//                 leading: Icon(Icons.logout),
+//
+//               ),
+//             ],
+//           ),
+//         ),
+//         appBar: AppBar(
+//           toolbarHeight: 100.0,
+//           // leading: Drawer(
+//
+//           // ),
+//           shape: const RoundedRectangleBorder(
+//             borderRadius: BorderRadius.only(
+//                 bottomRight: Radius.circular(16),
+//                 bottomLeft: Radius.circular(16)),
+//           ),
+//           title: Center(
+//               child: Text('AVAILABLE PG\'s AT')),
+//           shadowColor: Colors.deepPurple.shade700,
+//           backgroundColor: Colors.deepPurple.shade700,
+//           actions: <Widget>[
+//             IconButton(
+//               icon: const Icon(Icons.bookmark_added_rounded),
+//               tooltip: 'Your bookmarked PG\'s',
+//               onPressed: () {
+//                 // handle the press
+//               },
+//             ),
+//           ],
+//
+//         ),
+//         backgroundColor: Colors.grey.shade300,
+//         body: SafeArea(
+//           child: Padding(
+//             padding: EdgeInsets.symmetric(horizontal: 0.0,vertical: 10.0),
+//             child: PgPage(),
+//
+//           ),
+//
+//         ),
+//       );
+//
+//   }
+// }
+//
+// class PgPage extends StatefulWidget {
+//   @override
+//   _PgPageState createState() => _PgPageState();
+// }
+//
+// class _PgPageState extends State<PgPage> {
+//
+//   Container viewList( String collegeName, int id){
+//     return Container(
+//       height: 100.0,
+//       child: Card(
+//         margin: EdgeInsets.symmetric(vertical: 10.0,horizontal: 25.0),
+//         elevation: 5.0,
+//         shape: RoundedRectangleBorder(
+//           borderRadius: BorderRadius.all( Radius.circular(12.0)),
+//         ),
+//         child: TextButton(
+//
+//           child: ListTile(
+//
+//             leading: CircleAvatar(
+//               backgroundColor: Colors.deepPurple.shade700,
+//               child: Icon(
+//                 Icons.night_shelter,
+//                 color: Colors.white,
+//               ),
+//             ),
+//             title: Text(
+//               collegeName,
+//             ),
+//           ),
+//           onPressed: (){
+//             // Navigator.pushNamed(
+//             //     context,
+//             _navigateToNextScreen(context);
+//             // ),
+//
+//             //
+//           },
+//
+//         ),
+//       ),
+//     );
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     return CustomScrollView(
+//       slivers: [
+//         SliverAppBar(
+//           elevation: 10.0,
+//
+//           toolbarHeight: 100.0,
+//
+//           shape: const RoundedRectangleBorder(
+//
+//             borderRadius: BorderRadius.all( Radius.circular(16.0)),
+//           ),
+//           backgroundColor: Colors.deepPurple.shade700,
+//           title: Container(
+//             width: double.infinity,
+//             height: 40,
+//
+//             color: Colors.white,
+//             child: const Center(
+//               child: TextField(
+//                 decoration: InputDecoration(
+//                     hintText: 'Search college',
+//
+//                     prefixIcon: Icon(Icons.search),
+//                     suffixIcon: Icon(Icons.camera_alt)),
+//               ),
+//             ),
+//           ),
+//         ),
+//         SliverList(
+//           delegate: SliverChildListDelegate(
+//             [
+//               Column(
+//                 children: <Widget>[
+//                   ClgStream(),
+//
+//                 ],
+//               ),
+//
+//             ],
+//           ),
+//         ),
+//       ],
+//
+//     );
+//
+//   }
+// }
 
 void _navigateToNextScreen(BuildContext context) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => Clg()));
+ // Navigator.of(context).push(MaterialPageRoute(builder: (context) => Clg()));
 }
 
 
@@ -311,10 +312,11 @@ class Collage extends StatelessWidget {
       child: ListTile(
         title: Text(name),
         subtitle: Text(city),
-        leading: Image.network('https://firebasestorage.googleapis.com/v0/b/nagapradeshdevjam.appspot.com/o/mnnit.png?alt=media&token=861057ca-9939-4cdf-a7a5-6b6959aeb7c7', fit: BoxFit.cover,),
+        leading: Image.network(logo, fit: BoxFit.fill,),
         hoverColor: Colors.deepPurple,
       )
       );
 
   }
 }
+

@@ -1,6 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pgapp/home.dart';
+import 'package:pgapp/sign_up.dart';
 import 'package:pgapp/viewpg.dart';
 import 'package:pgapp/main.dart';
+
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
 class SignIn extends StatefulWidget {
   static const String id = "signIn";
   const SignIn({Key? key}) : super(key: key);
@@ -10,6 +17,37 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+  final emailc = TextEditingController();
+  final passc = TextEditingController();
+
+  void dispose(){
+    super.dispose();
+    emailc.dispose();
+    passc.dispose();
+  }
+  Future<UserCredential?> signIn(String email, String password) async {
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: emailc.text.toString(),
+        password: passc.text.toString(),
+      );
+      return userCredential;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      } else {
+        print('Error occurred: ${e.message}');
+      }
+      return null;
+    } catch (e) {
+      print('Error occurred: $e');
+      return null;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -44,8 +82,8 @@ class _SignInState extends State<SignIn> {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
-                    child: const TextField(
-
+                    child:  TextField(
+                       controller: emailc,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Email",
@@ -68,8 +106,9 @@ class _SignInState extends State<SignIn> {
                   ),
                   child: Padding(
                     padding: EdgeInsets.only(left: 20),
-                    child: const TextField(
+                    child:  TextField(
                       obscureText: true,
+                      controller: passc,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: "Password",
@@ -83,37 +122,53 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
               const SizedBox(height: 30,),
-              MaterialButton(
-                height: 70,
-                minWidth: 330,
-                onPressed: (){
-                  Navigator.pushNamed(context, ViewPG.id);
-                },
-                color: Colors.deepPurple[700],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+              Padding(
+                padding: EdgeInsets.only(left: 22,right: 22),
+                child: MaterialButton(
+                  height: 70,
+                  minWidth: 290,
+                  onPressed: () async {
+                    UserCredential? userCredential = await signIn(emailc.text.toString(), passc.text.toString());
+                    if (userCredential != null) {
+                      // sign in successful
 
+                    } else {
+                      // sign in failed
+                    }
+                    Navigator.pushNamed(context, First.id);
+                  },
+                  color: Colors.deepPurple[700],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+
+                  ),
+                  child: const Text("Sign in", style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),),
                 ),
-                child: const Text("Sign in", style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                  color: Colors.white,
-                ),),
               ),
-              const SizedBox(height: 30,),
+              const SizedBox(height: 25,),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children:  [
                     Text("Not a member !", style: TextStyle(
                       //  fontWeight: FontWeight.bold,
                         fontSize: 16
                     )),
                     SizedBox(width: 8,),
-                    Text("Register now", style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16
-                    )),
+                    TextButton(
+                      onPressed: (){
+                        Navigator.pushNamed(context, SignUp.id);
+                      },
+                      child: Text("Register now", style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        color: Colors.deepPurple
+                      )),
+                    ),
                   ],
                 ),
               )

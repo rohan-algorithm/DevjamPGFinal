@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pgappfinal.app-mergeDebugResources-14:/values-zh-rCN/values-zh-rCN.xml",
+            "outputFile": "com.example.pgappfinal.app-mergeDebugResources-20:/values-zh-rCN/values-zh-rCN.xml",
             "map": [
                 {
                     "source": "/Users/rohanrao/.gradle/caches/transforms-3/c1463af6cb467bf02a2c891016443d37/transformed/browser-1.4.0/res/values-zh-rCN/values-zh-rCN.xml",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/rohanrao/.gradle/caches/transforms-3/1141b72fb8be4e566e7814849b1aa3a2/transformed/core-1.6.0/res/values-zh-rCN/values-zh-rCN.xml",
+                    "source": "/Users/rohanrao/.gradle/caches/transforms-3/36645dad4856a45a63618a9e4f104845/transformed/core-1.8.0/res/values-zh-rCN/values-zh-rCN.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

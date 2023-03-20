@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pgappfinal">
    <application
-        android:label="pgappfinal"
+        android:label="Collage Niwas"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

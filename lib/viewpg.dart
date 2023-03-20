@@ -2,6 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:slide_to_act/slide_to_act.dart';
+import 'clg.dart';
+import 'package:url_launcher/url_launcher.dart' ;
 
 class ViewPG extends StatelessWidget {
   static const String id = "viewpg";
@@ -15,9 +17,14 @@ class ViewPG extends StatelessWidget {
 
         children: [
           AppBar(
-            title: Text('Imperial PG MNNIT'),
-            backgroundColor: Colors.deepPurple[700],
-            shadowColor: Colors.deepPurple[200],
+            title: Center(child: Text(Name)),
+            actions: [
+              Padding(
+                padding: EdgeInsets.all(15),
+                  child: Icon(Icons.favorite)),
+            ],
+            backgroundColor: Colors.deepPurple,
+           // shadowColor: Colors.deepPurple[200],
             leading: BackButton(
               color: Colors.white,
             ),
@@ -34,7 +41,7 @@ class ViewPG extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(12)),
                 image: DecorationImage(
-                  image: AssetImage('assets/images/one.jpeg'),
+                  image: NetworkImage(Image1),
                   fit: BoxFit.cover,
                 )
               ),
@@ -43,7 +50,7 @@ class ViewPG extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   image: DecorationImage(
-                    image: AssetImage('assets/images/two.jpeg'),
+                    image: NetworkImage(Image2),
                     fit: BoxFit.cover,
                   )
               ),
@@ -52,7 +59,7 @@ class ViewPG extends StatelessWidget {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                   image: DecorationImage(
-                    image: AssetImage('assets/images/three.jpeg'),
+                    image: NetworkImage(Image3),
                     fit: BoxFit.cover,
                   )
               ),
@@ -66,12 +73,24 @@ class ViewPG extends StatelessWidget {
             child :ListTile(
             leading: CircleAvatar(
               backgroundColor: Colors.deepPurple,
-              backgroundImage: NetworkImage('https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/profile-photos-4.jpg'),
+              backgroundImage: NetworkImage(Profilepic),
             ) ,
-            title: Text('MS Dhoni'),
-            subtitle:  Text('Near MNNIT Malviya Hostel'),
-            trailing: Icon(
-                Icons.call
+            title: Text(Name),
+            subtitle:  Text(Address),
+            trailing: MaterialButton(
+              onPressed: () async {
+                final Uri url =Uri(
+                  scheme: 'tel',
+                  path: '9770573891'
+                );
+                if(await canLaunchUrl(url)){
+                  await launchUrl(url);
+                }
+                //UrlLauncher("tel://21213123123")
+              },
+              child: Icon(
+                  Icons.call
+              ),
             ),
           ),
           ),
@@ -174,7 +193,7 @@ class ViewPG extends StatelessWidget {
                          // primary: Colors.purpleAccent,
                           backgroundColor: Colors.deepPurple[100], // Background Color
                         ),
-                        child: Text("₹ 7000",
+                        child: Text('₹'+Price,
                           //textAlign: TextAlign.left,
                           textDirection: TextDirection.ltr,
                           style: TextStyle(
@@ -187,10 +206,35 @@ class ViewPG extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8,),
-                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", style: TextStyle(
-                    fontStyle: FontStyle.italic,
-                    fontSize: 15
-                )),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(Description, style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontSize: 15
+                  )),
+                    SizedBox(height: 5,),
+                    Text('Rules',style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold
+                    ),),
+                    SizedBox(height: 5,),
+                    Text(Description, style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 15
+                    )),
+                    SizedBox(height: 5,),
+                    Text('Nearby Landmarks',style: TextStyle(
+                      fontSize: 30,
+                        fontWeight: FontWeight.bold
+                    ),),
+                    SizedBox(height: 5,),
+                    Text(Description, style: TextStyle(
+                        fontStyle: FontStyle.italic,
+                        fontSize: 15
+                    )),
+                  ]
+                ),
                 SizedBox(height: 20,),
                 Padding(padding: EdgeInsets.all(12),
                 child:SlideAction(

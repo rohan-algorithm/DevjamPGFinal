@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.pgappfinal.app-mergeDebugResources-14:/values-ml/values-ml.xml",
+            "outputFile": "com.example.pgappfinal.app-mergeDebugResources-20:/values-ml/values-ml.xml",
             "map": [
                 {
                     "source": "/Users/rohanrao/.gradle/caches/transforms-3/c1463af6cb467bf02a2c891016443d37/transformed/browser-1.4.0/res/values-ml/values-ml.xml",
@@ -18,23 +18,6 @@
                         "startOffsets": "2416,2525,2628,2739",
                         "endColumns": "108,102,110,103",
                         "endOffsets": "2520,2623,2734,2838"
-                    }
-                },
-                {
-                    "source": "/Users/rohanrao/.gradle/caches/transforms-3/1141b72fb8be4e566e7814849b1aa3a2/transformed/core-1.6.0/res/values-ml/values-ml.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "24",
-                        "startColumns": "4",
-                        "startOffsets": "2843",
-                        "endColumns": "100",
-                        "endOffsets": "2939"
                     }
                 },
                 {
@@ -69,6 +52,23 @@
                         "startOffsets": "55,174,353,492,613,777,902,1007,1273,1455,1571,1745,1881,2030,2191,2255,2324",
                         "endColumns": "118,178,138,120,163,124,104,105,181,115,173,135,148,160,63,68,91",
                         "endOffsets": "169,348,487,608,772,897,1002,1108,1450,1566,1740,1876,2025,2186,2250,2319,2411"
+                    }
+                },
+                {
+                    "source": "/Users/rohanrao/.gradle/caches/transforms-3/36645dad4856a45a63618a9e4f104845/transformed/core-1.8.0/res/values-ml/values-ml.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "24",
+                        "startColumns": "4",
+                        "startOffsets": "2843",
+                        "endColumns": "100",
+                        "endOffsets": "2939"
                     }
                 }
             ]
