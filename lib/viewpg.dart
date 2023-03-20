@@ -1,14 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:slide_to_act/slide_to_act.dart';
 import 'clg.dart';
 import 'package:url_launcher/url_launcher.dart' ;
-
+final _controller = ConfettiController();
+bool isPlaying = false;
 class ViewPG extends StatelessWidget {
   static const String id = "viewpg";
-  const ViewPG({Key? key}) : super(key: key);
 
+  const ViewPG({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,12 +83,11 @@ class ViewPG extends StatelessWidget {
               onPressed: () async {
                 final Uri url =Uri(
                   scheme: 'tel',
-                  path: '9770573891'
+                  path: Phone.toString()
                 );
                 if(await canLaunchUrl(url)){
                   await launchUrl(url);
                 }
-                //UrlLauncher("tel://21213123123")
               },
               child: Icon(
                   Icons.call
@@ -242,11 +243,17 @@ class ViewPG extends StatelessWidget {
                   innerColor: Colors.deepPurple,
                   text: 'Schedule a Visit',
                   onSubmit: (){
+                    isPlaying = !isPlaying;
+                    if(isPlaying){
+                      _controller.stop();
+                    }else{
+                      _controller.play();
+                    }
                     //Do something
                   },
 
-                ),)
-
+                ),),
+                ConfettiWidget(confettiController: _controller),
               ],
             ),
 

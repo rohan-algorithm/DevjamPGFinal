@@ -15,13 +15,16 @@ class _PgApplicationPageState extends State<PgApplicationPage> {
   final _formKey = GlobalKey<FormState>();
   final _name = TextEditingController();
   final _address = TextEditingController();
+  final _profile = TextEditingController();
   String _price = '0';
+
   final _phoneNumber = TextEditingController();
-  final _gender = TextEditingController();
+  String _gender = "Male";
   final _owner = TextEditingController();
   final _image1 = TextEditingController();
   final _image2 = TextEditingController();
   final _image3 = TextEditingController();
+  final _cover= TextEditingController();
  // final _coverImage = TextEditingController();
   final _description = TextEditingController();
   //final _coverImage = TextEditingController();
@@ -57,9 +60,11 @@ class _PgApplicationPageState extends State<PgApplicationPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    //  theme: ThemeData(colorScheme: Colors.deepPurple),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('PG Application'),
+          backgroundColor: Colors.deepPurple,
+          title: Center(child: const Text('Enter PG Details')),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -143,6 +148,42 @@ class _PgApplicationPageState extends State<PgApplicationPage> {
                     },
                     controller: _description,
                   ),
+                  TextField(
+                    controller: _image1,
+                    decoration: InputDecoration(
+                      hintText: 'Image 1',
+                     // border: OutlineInputBorder(),
+                    ),
+                  ),
+                  TextField(
+                    controller: _image2,
+                    decoration: InputDecoration(
+                      hintText: 'Image 2',
+                      //border: OutlineInputBorder(),
+                    ),
+                  ),
+                  TextField(
+                    controller: _image3,
+                    decoration: InputDecoration(
+                      hintText: 'Image 3',
+                      //border: OutlineInputBorder(),
+                    ),
+                  ),
+                  TextField(
+                    controller: _profile,
+                    decoration: InputDecoration(
+                      hintText: 'Prifile pic',
+                      //border: OutlineInputBorder(),
+                    ),
+                  ),
+                  TextField(
+                    controller: _cover,
+                    decoration: InputDecoration(
+                      hintText: 'cover',
+                     // border: OutlineInputBorder(),
+                    ),
+                  ),
+
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -154,34 +195,34 @@ class _PgApplicationPageState extends State<PgApplicationPage> {
                         ),
                       ),
                       SizedBox(height: 8.0),
-                      // Row(
-                      //   children: [
-                      //     Radio<String>(
-                      //       value: 'Male',
-                      //       groupValue: _gender,
-                      //       onChanged: (value) {
-                      //         setState(() {
-                      //           _gender = value!;
-                      //         });
-                      //       },
-                      //     ),
-                      //     Text('Male'),
-                      //   ],
-                      // ),
-                      // Row(
-                      //   children: [
-                      //     Radio<String>(
-                      //       value: 'Female',
-                      //       groupValue: _gender,
-                      //       onChanged: (value) {
-                      //         setState(() {
-                      //           _gender = value!;
-                      //         });
-                      //       },
-                      //     ),
-                      //     Text('Female'),
-                      //   ],
-                      // ),
+                      Row(
+                        children: [
+                          Radio<String>(
+                            value: 'Male',
+                            groupValue: _gender,
+                            onChanged: (value) {
+                              setState(() {
+                                _gender = value!;
+                              });
+                            },
+                          ),
+                          Text('Male'),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Radio<String>(
+                            value: 'Female',
+                            groupValue: _gender,
+                            onChanged: (value) {
+                              setState(() {
+                                _gender = value!;
+                              });
+                            },
+                          ),
+                          Text('Female'),
+                        ],
+                      ),
 
 
                       SizedBox(height: 16.0),
@@ -255,27 +296,35 @@ class _PgApplicationPageState extends State<PgApplicationPage> {
                         ),
                       ),
                       SizedBox(height: 16.0),
-                      MaterialButton(onPressed: (){
-                        String id = _name.text.toString();
-                        firestore.doc(id).set({
-                          'name' :_name.text.toString(),
-                          'owner' :_owner.text.toString(),
-                          'address' :_address.text.toString(),
-                          'cover' :_coverImage.toString(),
-                          'image1' : _image1.toString(),
-                          'image2' : _image2.toString(),
-                          'image3' : _image3.toString(),
-                          'price' : _price.toString(),
-                          'profile' : _coverImage.toString(),
+                      Center(
+                        child: MaterialButton(
+                          onPressed: (){
 
-                        }).then((value){
-                          Navigator.pop(context);
-                        }).onError((error, stackTrace){
-                          //Utils().
-                        });
+                          String id = _name.text.toString();
+                          firestore.doc(id).set({
+                            'name' :_name.text.toString(),
+                            'owner' :_owner.text.toString(),
+                            'address' :_address.text.toString(),
+                            'cover' :_cover.toString(),
+                            'image1' : _image1.toString(),
+                            'image2' : _image2.toString(),
+                            'image3' : _image3.toString(),
+                            'price' : _price.toString(),
+                            'profilepic' : _profile.toString(),
+                            'Description' : _description.toString(),
+                            'gender' : _gender.toString(),
+                            'phone' : _phoneNumber.toString(),
 
-                      },
-                        child: Text('Submit'),
+                          }).then((value){
+                            Navigator.pop(context);
+                          }).onError((error, stackTrace){
+                            //Utils().
+                          });
+
+                        },
+                          color: Colors.deepPurple,
+                          child: Text('Submit',style: TextStyle(color: Colors.white)),
+                        ),
                       )
                     ],
                   ),

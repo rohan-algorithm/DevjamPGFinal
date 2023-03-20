@@ -59,14 +59,14 @@ class _HomeScnState extends State<HomeScn> {
                 onPressed: (){
                    Navigator.pushNamed(context, SearchPage.id);
                 },
-                text: 'Blog',),
+                text: 'Search',),
                 GButton(icon: Icons.favorite_border,
                   text: 'Favorite',),
               GButton(icon: Icons.settings,
                 onPressed: (){
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => UserScreen(userId: 'admin@email.com')
-                  );
+                  Navigator.pushNamed(context, SellerDash.id,arguments: email);
+                  // MaterialPageRoute(
+                  //   builder: (BuildContext context) => SellerDash());
                 },
                 text: 'Account',),
             ],

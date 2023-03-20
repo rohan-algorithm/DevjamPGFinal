@@ -1,5 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pgapp/addpg.dart';
+
+final currentUser = FirebaseAuth.instance.currentUser;
+final email = currentUser?.email;
 
 class SellerDash extends StatefulWidget {
   static const String id= "selldsh";
@@ -14,6 +18,7 @@ class _SellerDashState extends State<SellerDash> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text('Dashboard'),
       ),
       body: Padding(
@@ -34,19 +39,13 @@ class _SellerDashState extends State<SellerDash> {
                     CircleAvatar(
                       radius: 50.0,
                       backgroundImage: NetworkImage(
-                        'https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50',
+
+                        'https://img.freepik.com/free-icon/man_318-157609.jpg',
                       ),
                     ),
                     SizedBox(height: 16.0),
-                    Text(
-                      'John Doe',
-                      style: TextStyle(
-                        fontSize: 24.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      'johndoe@example.com',
+
+                    Text(email!,
                       style: TextStyle(
                         fontSize: 16.0,
                       ),
@@ -65,7 +64,7 @@ class _SellerDashState extends State<SellerDash> {
                       InkWell(
                         onTap: () {
                           // Navigate to orders screen
-                          Navigator.pushNamed(context, PgApplicationPage.id);
+                         // Navigator.pushNamed(context, PgApplicationPage.id);
                         },
                         child: Container(
                           padding: EdgeInsets.all(16.0),
@@ -76,10 +75,10 @@ class _SellerDashState extends State<SellerDash> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(Icons.shopping_cart),
+                              Icon(Icons.inbox),
                               SizedBox(height: 16.0),
                               Text(
-                                'Orders',
+                                'Details',
                                 style: TextStyle(
                                   fontSize: 20.0,
                                 ),
