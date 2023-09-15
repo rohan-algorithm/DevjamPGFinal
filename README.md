@@ -3,6 +3,9 @@
 <img src='assets/logo.png' width='200' height='200'>
 
 
+## Download the App
+
+- **Android**: [Download APK](https://drive.google.com/file/d/1OQ0soCthv63O9Wt-dfz9As3X6XpxvU3Q/view?usp=sharing)
 
 
 ## Description
