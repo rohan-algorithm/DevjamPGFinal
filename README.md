@@ -1,6 +1,9 @@
 # College Niwas - Flutter App
 
-![College Niwas Logo](https://drive.google.com/file/d/1EP8-IalUzNZV9SvlrlPJSfyA_AhAWE5y/view?usp=sharing)
+<img src='assets/logo.png' width='200' height='200'>
+
+
+
 
 ## Description
 
@@ -28,9 +31,11 @@ College Niwas is an Android app designed to help college students find and list 
 
 ## Screenshots
 
-![App Screenshot 1](https://drive.google.com/file/d/1FFnX7k9ottAAwz9oWvVaYgpL__s2MhYF/view?usp=sharing)
-![App Screenshot 2](https://drive.google.com/file/d/1FDCzTFc7AjN6yhf_xXT4DmJMrdcavlNQ/view?usp=sharing)
-![App Screenshot 3](https://drive.google.com/file/d/1FENiACiMQ_CcQHf5a7xB9IoXI8xHFwb6/view?usp=sharing)
+<img src='assets/Screenshot_20230916_015746.jpg' width='250' height='500'>
+<img src='assets/Screenshot_20230916_015830 (1).jpg' width='250' height='500'>
+<img src='assets/Screenshot_20230916_024301.jpg' width='250' height='500'>
+<img src='assets/Screenshot_20230916_015955.jpg' width='250' height='500'>
+
 
 ## Installation
 
