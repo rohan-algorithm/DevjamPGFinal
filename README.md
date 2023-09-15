@@ -1,16 +1,44 @@
-# pgappfinal
+# College Niwas - Flutter App
 
-A new Flutter project.
+![College Niwas Logo](https://drive.google.com/file/d/1EP8-IalUzNZV9SvlrlPJSfyA_AhAWE5y/view?usp=sharing)
 
-## Getting Started
+## Description
 
-This project is a starting point for a Flutter application.
+College Niwas is an Android app designed to help college students find and list rooms and PG accommodations near their respective colleges. It simplifies the process of searching for suitable accommodations and enables students to book visits to the listed PGs and rooms. Additionally, the app offers a separate admin dashboard for PG and room owners, allowing them to manage their listings.
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### For Students
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Search Accommodations**: Users can search for rooms and PGs near their college by specifying their college name or location.
+
+- **View Listings**: Detailed listings of available accommodations, including descriptions, photos, prices, and contact information.
+
+- **Book Visits**: Students can book visits to view the accommodations they are interested in.
+
+- **Filter Options**: Filter search results based on preferences such as budget, location, and amenities.
+
+### For PG/Room Owners (Admin Dashboard)
+
+- **Manage Listings**: PG and room owners can create, edit, and delete listings for their accommodations.
+
+- **View Booking Requests**: Owners can view and accept/reject booking requests from students.
+
+- **Update Availability**: Owners can update the availability status of their accommodations.
+
+## Screenshots
+
+![App Screenshot 1](https://drive.google.com/file/d/1FFnX7k9ottAAwz9oWvVaYgpL__s2MhYF/view?usp=sharing)
+![App Screenshot 2](https://drive.google.com/file/d/1FDCzTFc7AjN6yhf_xXT4DmJMrdcavlNQ/view?usp=sharing)
+![App Screenshot 3](https://drive.google.com/file/d/1FENiACiMQ_CcQHf5a7xB9IoXI8xHFwb6/view?usp=sharing)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/rohan-algorithm/DevjamPGFinal.git
+
+
+Contact
+If you have any questions or need assistance, feel free to contact us at rohanrao543211@gmail.com.   
