@@ -5,9 +5,6 @@
 
 ## Download the App
 
-- **Android**: [Download APK](https://drive.google.com/file/d/1OQ0soCthv63O9Wt-dfz9As3X6XpxvU3Q/view?usp=sharing)
-
-
 ## Description
 
 College Niwas is an Android app designed to help college students find and list rooms and PG accommodations near their respective colleges. It simplifies the process of searching for suitable accommodations and enables students to book visits to the listed PGs and rooms. Additionally, the app offers a separate admin dashboard for PG and room owners, allowing them to manage their listings.
